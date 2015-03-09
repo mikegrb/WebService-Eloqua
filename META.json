@@ -1,5 +1,5 @@
 {
-   "abstract" : "Blah blah blah",
+   "abstract" : "Perl interface to the Eloqua API",
    "author" : [
       "Mike Greb <michael@thegrebs.com>"
    ],
@@ -37,6 +37,10 @@
       },
       "runtime" : {
          "requires" : {
+            "Furl" : "0",
+            "IO::Socket::SSL" : "0",
+            "JSON::XS" : "0",
+            "MIME::Base64" : "0",
             "perl" : "5.008005"
          }
       },
@@ -47,6 +51,9 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.01"
+   "version" : "0.01",
+   "x_contributors" : [
+      "Mike Greb <mikegrb@cpan.org>"
+   ]
 }
 
