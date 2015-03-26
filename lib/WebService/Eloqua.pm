@@ -83,11 +83,14 @@ sub _req {
 
   if ( $method eq 'post' && exists $args{json} ) {
     $args{content} = JSON::XS::encode_json( delete $args{json} );
-    push @headers, 'Content-type' => 'application/json';
+    push @headers, 'Content-type' => 'application/json; charset=UTF-8';
   }
   elsif ( $method eq 'post' && exists $args{csv} ) {
     delete $args{csv};
-    push @headers, 'Content-type' => 'text/csv';
+    push @headers, 'Content-type' => 'text/csv; charset=UTF-8';
+  }
+  elsif ( $method eq 'post' ) {
+    push @headers, 'Content-type' => 'application/json; charset=UTF-8';
   }
 
   if (%args) {
