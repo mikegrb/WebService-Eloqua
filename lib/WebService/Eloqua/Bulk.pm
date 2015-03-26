@@ -55,6 +55,7 @@ sub email_groups {
 
 sub syncs {
   my ($self, $uri) = @_;
+  $uri ||= '/syncs';
   return $self->_decode_response( $self->_bulk_req( 'get', $uri ) );
 }
 
