@@ -22,7 +22,7 @@ sub contacts_imports {
 }
 
 sub contacts_lists {
-  my $self = shift; 
+  my $self = shift;
   return $self->_decode_response( $self->_bulk_req( 'get', '/contacts/lists/' ) );
 }
 
@@ -48,7 +48,7 @@ sub post_contacts_imports_data {
 }
 
 sub email_groups {
-  my $self = shift; 
+  my $self = shift;
   return $self->_decode_response( $self->_bulk_req( 'get', '/emailGroups' ) );
 }
 
