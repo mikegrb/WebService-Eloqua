@@ -43,7 +43,6 @@ sub post_contacts_imports_data {
   my ( $self, $uri, $data ) = @_;
   return $self->_bulk_req(
     'post', $uri . '/data',
-    csv     => 1,
     content => $data
   )->code == 204 ? 1 : undef;
 }
