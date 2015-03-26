@@ -119,8 +119,10 @@ sub _check_response {
   my ( $self, $response ) = @_;
 
   if ($self->{trace_requests} > 1) {
+    warn "REQUEST\n";
     warn $response->captured_req_headers . "\n";
     warn $response->captured_req_content . "\n";
+    warn join "\n", 'RESPONSE', $response->as_http_response->as_string . "\n";
   }
 # check that we weren't moved to a different pod
   if ( $response->code == 401 && $response->{request_src}->{url} !~ /id$/ ) {
